@@ -1,0 +1,53 @@
+{
+  "name": "webgazer",
+  "version": "3.3.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brownhci/WebGazer.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "main": "dist/webgazer.umd.cjs",
+  "module": "dist/webgazer.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "dev": "vite build --mode development",
+    "build": "vite build",
+    "gen_docs": "jsdoc -c jsdoc.conf.json src/*"
+  },
+  "files": [
+    "/dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/webgazer.js",
+      "require": "./dist/webgazer.umd.cjs"
+    }
+  },
+  "keywords": [
+    "webgazer",
+    "eyetracking",
+    "webcam",
+    "online"
+  ],
+  "dependencies": {
+    "@tensorflow-models/face-landmarks-detection": "0.0.3",
+    "@tensorflow/tfjs": "^3.15.0",
+    "localforage": "1.7.3",
+    "regression": "2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "filemanager-webpack-plugin": "^8.0.0",
+    "jsdoc": "^4.0.2",
+    "rimraf": "2.6.3",
+    "vite": "^5.4.3",
+    "vite-plugin-banner": "^0.8.0",
+    "yarnhook": "^0.4.3"
+  }
+}
